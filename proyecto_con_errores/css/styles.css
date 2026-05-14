@@ -109,7 +109,7 @@ body {
 }
 .primary {
   /* ERROR 09: la variable definida arriba se llama --gold */
-  background: linear-gradient(135deg, var(--dorado), var(--coral));
+  background: linear-gradient(135deg, var(--gold), var(--coral));
   color: #140f0c;
 }
 .ghost {
@@ -129,7 +129,7 @@ body {
 
 .menu-grid {
   /* ERROR 10: display correcto es grid */
-  display: grips;
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
 }
@@ -194,8 +194,8 @@ body {
 .form-message { min-height: 28px; color: var(--gold); font-weight: 800; }
 .footer { text-align: center; color: var(--muted); padding: 30px; border-top: 1px solid var(--line); }
 
-/* ERROR 11: max-wdith está mal escrito; por eso no funciona en celular */
-@media (max-wdith: 760px) {
+/* ERROR 11: max-width está mal escrito; por eso no funciona en celular */
+@media (max-width: 760px) {
   .navbar { height: auto; padding: 18px 0; flex-direction: column; gap: 18px; }
   .nav-links { flex-wrap: wrap; justify-content: center; gap: 14px; }
   .menu-grid, .experience, .booking-form, .stats { grid-template-columns: 1fr; }
