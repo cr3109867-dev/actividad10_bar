@@ -89,30 +89,81 @@
     </section>
 
     <section id="reservas" class="section booking">
-      <div class="section-heading">
-        <span class="eyebrow">Reservas</span>
-        <h2>Agenda tu visita</h2>
-        <p>El formulario debe validar nombre, teléfono y número de personas.</p>
-      </div>
-      <!-- ERROR 06: el JS busca reservationForm -->
-      <form id="reservationForm" class="booking-form"> 
-        <label>Nombre completo
-          <input id="nombre" type="text" placeholder="Ej: Mariana López" required>
-        </label>
-        <label>Teléfono
-          <!-- ERROR 07: el JS busca telefono -->
-          <input id="telefono" type="tel" placeholder="3001234567" required>
-        </label>
-        <label>Personas
-          <input id="personas" type="number" min="1" max="8" value="2" required>
-        </label>
-        <label>Fecha
-          <input id="fecha" type="date" required>
-        </label>
-        <button class="btn primary" type="submit">Confirmar reserva</button>
-        <p id="mensajeReserva" class="form-message" role="status"></p>
-      </form>
-    </section>
+    <p>
+      Agenda una mesa personalizada y disfruta una experiencia exclusiva en Origen Bar de Autor.
+    </p>
+  </div>
+
+  <form id="reservationForm" class="booking-form">
+
+    <label>
+      Nombre completo
+      <input
+        id="nombre"
+        type="text"
+        placeholder="Ej: Mariana López"
+        required>
+    </label>
+
+    <label>
+      Teléfono
+      <input
+        id="telefono"
+        type="tel"
+        placeholder="3001234567"
+        required>
+    </label>
+
+    <label>
+      Número de personas
+      <input
+        id="personas"
+        type="number"
+        min="1"
+        max="12"
+        value="2"
+        required>
+    </label>
+
+    <label>
+      Fecha de reserva
+      <input
+        id="fecha"
+        type="date"
+        required>
+    </label>
+
+    <label>
+      Hora de reserva
+      <input
+        id="hora"
+        type="time"
+        required>
+    </label>
+
+    <label>
+      Zona preferida
+      <select id="zona" required>
+        <option value="">Selecciona una zona</option>
+        <option>Terraza Lounge</option>
+        <option>Zona VIP</option>
+        <option>Bar Central</option>
+        <option>Jazz Room</option>
+      </select>
+    </label>
+
+    <button class="btn primary" type="submit">
+      Confirmar reserva
+    </button>
+
+    <p id="mensajeReserva"
+       class="form-message"
+       role="status">
+    </p>
+
+  </form>
+
+</section>
   </main>
 
   <footer class="footer">

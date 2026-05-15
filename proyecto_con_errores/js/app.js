@@ -1,8 +1,3 @@
-// Archivo con errores intencionales para la actividad "Caza errores".
-
-// ERROR 12: falta cerrar la cadena de texto. Esto rompe todo el JavaScript.
-const nombreBar = "Origen Bar de Autor";
-
 const year = document.getElementById("year");
 year.textContent = new Date().getFullYear();
 
@@ -21,27 +16,40 @@ form.addEventListener("submit", function (event) {
   const telefono = document.getElementById("telefono").value.trim();
   const personas = Number(document.getElementById("personas").value);
   const fecha = document.getElementById("fecha").value;
+  const hora = document.getElementById("hora").value;
+  const zona = document.getElementById("zona").value;
 
   if (nombre.length < 3) {
-    mensaje.textContent = "Escribe un nombre válido.";
+    mensaje.textContent = "Ingresa un nombre válido.";
     return;
   }
 
   if (!/^3\d{9}$/.test(telefono)) {
-    mensaje.textContent = "El teléfono debe iniciar por 3 y tener 10 dígitos.";
+    mensaje.textContent = "El teléfono debe tener 10 dígitos y comenzar por 3.";
     return;
   }
 
-  if (personas < 1 || personas > 8) {
-    mensaje.textContent = "Solo aceptamos reservas entre 1 y 8 personas.";
+  if (personas < 1 || personas > 12) {
+    mensaje.textContent = "La reserva debe ser entre 1 y 12 personas.";
     return;
   }
 
   if (!fecha) {
-    mensaje.textContent = "Selecciona una fecha para la reserva.";
+    mensaje.textContent = "Selecciona una fecha válida.";
     return;
   }
 
-  mensaje.textContent = `Reserva registrada para ${nombre}. Te contactaremos al ${telefono}.`;
+  if (!hora) {
+    mensaje.textContent = "Selecciona una hora válida.";
+    return;
+  }
+
+  if (!zona) {
+    mensaje.textContent = "Selecciona una zona preferida.";
+    return;
+  }
+
+  mensaje.textContent = `✅ Reserva confirmada para ${nombre} el ${fecha} a las ${hora} en ${zona}.`;
+
   form.reset();
 });
